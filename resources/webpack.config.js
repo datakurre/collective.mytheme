@@ -55,7 +55,6 @@ switch(path.basename(process.argv[1])) {
   case 'webpack-dev-server':
     module.exports = merge(PLONE.development, common, {
       entry: [
-        path.join(PATHS.src, 'default'),
         path.join(PATHS.src, 'logged-in')
       ]
     });

@@ -1,16 +1,21 @@
 import 'plone';
 import 'plone-logged-in';
+import 'resourceregistry';
 
-// import 'pfgquickedit';
-// import 'mosaic';
-// import 'layouts-editor';
-// import 'resourceregistry';
+/* Add extra bundles when needed
+import 'pfgquickedit';
+import 'mosaic';
+import 'layouts-editor';
+ */
 
 import './default.less';
 import './theme.less';
 import './logged-in.less';
 
-import jQuery from 'jquery';  // Expose jQuery for convenience
+/* Expose jQuery when needed
+import jQuery from 'jquery';
 window.jQuery = jQuery;
+*/
 
-window.require = undefined;  // Fix @@searchs
+import requirejs from 'exports-loader?requirejs!script-loader!requirejs/require.js';
+requirejs.config({});  // the real configuration is loaded in webpack.xml
