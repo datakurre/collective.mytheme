@@ -15,6 +15,9 @@ watch: clean node_modules $(SOURCES)
 clean:
 	$(RM) -r theme
 
+purge: clean
+	$(RM) -r .plone
+
 ###
 
 .PHONY: all build watch clean

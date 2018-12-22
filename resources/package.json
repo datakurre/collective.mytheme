@@ -2,6 +2,10 @@
   "name": "plonetheme.mytheme",
   "version": "0.0.0",
   "babel": {
+    "comments": true,
+    "plugins": [
+      "@babel/syntax-dynamic-import"
+    ],
     "presets": [
       "@babel/preset-env"
     ]

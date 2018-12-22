@@ -38,12 +38,7 @@ const common = {
           {
             loader: 'babel-loader',
             options: {
-              babelrc: false,
-              comments: true,
               cacheDirectory: true,
-              plugins: [
-                '@babel/syntax-dynamic-import'
-              ]
             }
           }
         ],
