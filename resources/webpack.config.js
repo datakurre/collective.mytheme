@@ -23,7 +23,6 @@ const PLONE = new PlonePlugin({
 const common = {
   entry: {
    'default': path.join(PATHS.src, 'default'),
-   'logged-in': path.join(PATHS.src, 'logged-in')
   },
   output: {
     path: PATHS.build
@@ -38,7 +37,14 @@ const common = {
         use: [
           {
             loader: 'babel-loader',
-            options: { cacheDirectory: true }
+            options: {
+              babelrc: false,
+              comments: true,
+              cacheDirectory: true,
+              plugins: [
+                '@babel/syntax-dynamic-import'
+              ]
+            }
           }
         ],
         include: PATHS.src
@@ -55,7 +61,7 @@ switch(path.basename(process.argv[1])) {
   case 'webpack-dev-server':
     module.exports = merge(PLONE.development, common, {
       entry: [
-        path.join(PATHS.src, 'logged-in')
+        path.join(PATHS.src, 'default')
       ]
     });
     break;
